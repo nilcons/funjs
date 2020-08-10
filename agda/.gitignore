@@ -1,0 +1,5 @@
+/_build/
+/js/agda-rts.js
+/js/biginteger.js
+/js/jAgda.*.js
+/js/out.js

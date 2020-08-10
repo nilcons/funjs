@@ -1,0 +1,4 @@
+name: funjs
+depend:
+  -- standard-library
+include: .
