@@ -8,3 +8,5 @@ console.log(Tree);
 console.log(Tree.showTree(Tree.exTree));
 
 console.log(Tree.showTree(Tree.binTree(new BigInteger(3))));
+
+console.log(Tree.showTree({left: {}, right: {left: {}, right: {}}}));

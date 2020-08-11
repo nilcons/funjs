@@ -1,4 +1,4 @@
-{-# OPTIONS --safe --without-K #-}
+{-# OPTIONS --without-K #-}
 
 module Tree where
 
@@ -9,6 +9,13 @@ open import Agda.Builtin.String
 data Tree : Set where
   Leaf : Tree
   Fan : Tree -> Tree -> Tree
+
+{-# COMPILE JS  Tree = function (x, v) {
+  if ('left' in x) { return v.Fan(x.left, x.right); }
+  else { return v.Leaf(); }
+} #-}
+{-# COMPILE JS  Leaf = {} #-}
+{-# COMPILE JS  Fan = function (l) { return function (r) { return { left: l, right: r }; }; } #-}
 
 infixr 3 _++_
 _++_ : String -> String -> String
